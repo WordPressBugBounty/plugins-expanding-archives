@@ -3,13 +3,15 @@
  * Plugin.php
  *
  * @package   expanding-archives
- * @copyright Copyright (c) 2022, Ashley Gibson
+ * @copyright Copyright (c) 2026, Ashley Gibson
  * @license   GPL2+
  */
 
 namespace Ashleyfae\ExpandingArchives;
 
 use Ashleyfae\ExpandingArchives\Api\v1\Posts;
+use Ashleyfae\ExpandingArchives\Helpers\ArchiveRenderer;
+use Ashleyfae\ExpandingArchives\ValueObjects\Month;
 
 class Plugin
 {
@@ -166,8 +168,8 @@ class Plugin
      */
     public function get_current_month_posts(): string
     {
-        $renderer = new \Ashleyfae\ExpandingArchives\Helpers\ArchiveRenderer();
-        $month    = new \Ashleyfae\ExpandingArchives\ValueObjects\Month(
+        $renderer = new ArchiveRenderer();
+        $month    = new Month(
             date('Y'),
             date('m')
         );
@@ -188,8 +190,8 @@ class Plugin
         // Security check.
         check_ajax_referer('expand_archives', 'nonce');
 
-        $renderer = new \Ashleyfae\ExpandingArchives\Helpers\ArchiveRenderer();
-        $month    = new \Ashleyfae\ExpandingArchives\ValueObjects\Month(
+        $renderer = new ArchiveRenderer();
+        $month    = new Month(
             absint($_POST['year']) ?? date('Y'),
             absint($_POST['month']) ?? date('m')
         );

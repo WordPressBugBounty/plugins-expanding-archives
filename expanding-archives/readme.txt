@@ -3,7 +3,7 @@ Contributors: NoseGraze
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=L2TL7ZBVUMG9C
 Tags: widget, sidebar, posts, archives, navigation, menu, collapse, expand, collapsing, collapsible, expanding, expandable
 Requires at least: 3.0
-Tested up to: 6.4.3
+Tested up to: 7.1
 Requires PHP: 7.4
 Stable tag: trunk
 License: GPLv2 or later
@@ -100,6 +100,9 @@ Note that the results may not update instantly, as the query to retrieve the dat
 
 == Changelog ==
 
+= 2.1.1 - 30 August 2026 =
+* Security: Fixed a stored XSS vulnerability.
+
 = 2.1.0 - 23 March 2024 =
 * New: Added support (via a filter) for specifying a cut-off date. See readme FAQ for details.
 
@@ -142,5 +145,5 @@ Note that the results may not update instantly, as the query to retrieve the dat
 
 == Upgrade Notice ==
 
-= 2.1.0 =
-* Added support (via a filter) for specifying a cut-off date. See readme FAQ for details.
+= 2.1.1 =
+* Fixed stored XSS
